@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../../../github/moonton template/moonton-template/moonton-template"
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "moonton-template"
+    }
+}
