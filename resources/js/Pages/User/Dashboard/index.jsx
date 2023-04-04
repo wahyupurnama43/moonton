@@ -32,7 +32,7 @@ export default function dashboard({ auth, featureMovies, movies }) {
                     {featureMovies.map((featureMovies) => (
                         <FeaturedMovie
                             key={featureMovies.id}
-                            slug="featureMovies.slug"
+                            slug={featureMovies.slug}
                             name={featureMovies.name}
                             category={featureMovies.kategory}
                             thumbnail={featureMovies.thumbnail}
