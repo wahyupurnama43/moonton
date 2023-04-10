@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class UserSubcription extends Model
+class UserSubscription extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['user_id', 'subcription_plan_id', 'price', 'expired_date', 'payment_status', 'snapToken'];
+    protected $fillable = ['user_id', 'subscription_plan_id', 'price', 'expired_date', 'payment_status', 'snapToken'];
 
     /**
      * Get the subscriptionPlan that owns the UserSubcription
