@@ -37,7 +37,7 @@ export default function BrowseMovie({ name, slug, thumbnail, category }) {
                     />
                 </div>
                 <Link
-                    href={route("prototype.movie.show", slug)}
+                    href={route("user.dashboard.movie.show", slug)}
                     className="inset-0 absolute z-50"
                 ></Link>
             </div>
