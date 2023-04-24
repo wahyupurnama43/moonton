@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\Movie\Store;
 use App\Http\Requests\Admin\Movie\Update;
 use Illuminate\Auth\Events\Validated;
+use PhpParser\Node\Expr\AssignOp\Mod;
 
 class MovieController extends Controller
 {
@@ -20,7 +21,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
+        $movies = Movie::withTrashed()->orderBy('deleted_at')->get();
         return inertia('Admin/Movie/index', [
             'movies' => $movies
         ]);
@@ -98,7 +99,7 @@ class MovieController extends Controller
 
         $movie->update($data);
 
-        return redirect()->route('admin.dashboard.movie.index')->with(['message' => "Movie updated Successfully", 'type' => 'success']);;
+        return redirect()->route('admin.dashboard.movie.index')->with(['message' => "Movie updated Successfully", 'type' => 'success']);
     }
 
     /**
@@ -109,6 +110,13 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+        return redirect()->route('admin.dashboard.movie.index')->with(['message' => "Movie updated destroy", 'type' => 'success']);;
+    }
+
+    public function restore($movie)
+    {
+        Movie::withTrashed()->find($movie)->restore();
+        return redirect()->route('admin.dashboard.movie.index')->with(['message' => "Movie updated restore", 'type' => 'success']);;
     }
 }
