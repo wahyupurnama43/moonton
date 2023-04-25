@@ -17,7 +17,7 @@ export default function dashboard({ auth, featureMovies, movies }) {
 
     return (
         <Authenticated auth={auth}>
-            <Head title="Dashboard">
+            <Head>
                 <link
                     rel="stylesheet"
                     href="https://unpkg.com/flickity@2/dist/flickity.min.css"

@@ -33,11 +33,6 @@ use App\Http\Controllers\Admin\MovieController as AdminMovieController;
 // });
 
 Route::redirect('/', '/login');
-
-
-// midtrans route
-Route::post('midtrans/notification', [SubscriptionPlanController::class, 'midtransCallback']);
-
 Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashboard.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::get('movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show')->middleware('checkUserSubscription:true');

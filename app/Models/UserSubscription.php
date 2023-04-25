@@ -12,7 +12,7 @@ class UserSubscription extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['user_id', 'subscription_plan_id', 'price', 'expired_date', 'payment_status', 'snap_token'];
+    protected $fillable = ['user_id', 'subscription_plan_id', 'price', 'expired_date', 'payment_status', 'snapToken'];
 
     /**
      * Get the subscriptionPlan that owns the UserSubcription

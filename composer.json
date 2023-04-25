@@ -12,7 +12,10 @@
         "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.7",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "midtrans/midtrans-php": "^2.5",
+=======
+>>>>>>> parent of 208741c (feat : midtrans)
         "spatie/laravel-permission": "^5.7",
 =======
 >>>>>>> parent of fa88cd8 (feat : setup spatie)
