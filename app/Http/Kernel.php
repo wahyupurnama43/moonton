@@ -65,10 +65,7 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-<<<<<<< HEAD
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'checkUserSubscription' => \App\Http\Middleware\CheckUserSubscription::class,
-=======
->>>>>>> parent of fa88cd8 (feat : setup spatie)
     ];
 }

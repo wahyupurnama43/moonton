@@ -20,13 +20,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-<<<<<<< HEAD
 
         $this->call(RoleTableSeeder::class);
         $this->call(userTableSeeder::class);
         $this->call(SubscriptionPlanTabelSeeder::class);
         // $this->call(MovieTableSeeder::class);
-=======
->>>>>>> parent of fa88cd8 (feat : setup spatie)
     }
 }
