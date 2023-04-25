@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\MovieController as AdminMovieController;
 |
 */
 
+<<<<<<< HEAD
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -47,6 +48,15 @@ Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashbo
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.dashboard.')->group(function () {
     Route::put('movie/{movie}/restore', [AdminMovieController::class, 'restore'])->name('movie.restore');
     Route::resource('movie', AdminMovieController::class);
+=======
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+>>>>>>> parent of fa88cd8 (feat : setup spatie)
 });
 
 
@@ -56,6 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+<<<<<<< HEAD
 Route::prefix('prototype')->name('prototype.')->group(function () {
     Route::get('/login', function () {
         return Inertia::render('Login');
@@ -79,3 +90,6 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+=======
+require __DIR__.'/auth.php';
+>>>>>>> parent of fa88cd8 (feat : setup spatie)
